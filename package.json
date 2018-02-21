@@ -15,6 +15,7 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "test": "tslint -p .",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
