@@ -10,11 +10,6 @@ const Contact = types
     address: types.optional(types.string, ''),
     email: types.optional(types.string, '')
   })
-  .views(self => ({
-    get phone() {
-      return self.telephones.entries();
-    }
-  }))
   .actions(self => {
     function setName(name: string) {
       self.name = name;
