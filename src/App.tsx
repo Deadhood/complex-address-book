@@ -1,11 +1,17 @@
 import * as React from 'react';
 import './App.css';
-
+import { Button } from './Button';
+import { FormComponent } from './FormComponent';
+import { ListComponent } from './ListComponent';
+import { ModalComponent } from './ModalComponent';
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        Address Book
+        <Button />
+        <FormComponent />
+        <ListComponent />
+        <ModalComponent />
       </div>
     );
   }
