@@ -8,7 +8,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        hello
         <Button />
         <FormComponent />
         <ListComponent />

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { List, Avatar } from 'antd';
-// import './App.css';
 
 const data = [
   {
