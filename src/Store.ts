@@ -20,11 +20,11 @@ const Contact = types
       self.name = name;
     }
 
-    function addPhone(phone: string) {
-      self.telephones.push(phone);
+    function setPhones(phones: string[]) {
+      self.telephones.splice(0, self.telephones.length, ...phones);
     }
 
-    return { setName, addPhone };
+    return { setName, setPhones };
   });
 
 const AddressBook = types
