@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { List, Avatar } from 'antd';
+
+import Avatar from 'antd/lib/avatar';
+import List from 'antd/lib/list';
 
 const data = [
   {

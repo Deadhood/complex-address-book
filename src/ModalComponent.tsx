@@ -1,13 +1,16 @@
 import * as React from 'react';
-import { Modal, Button } from 'antd';
+import Modal from 'antd/lib/modal';
 
-export const ModalComponent = () => (
-  <div>
-    <Button type="primary">submit</Button>
-    <Modal title="Basic Modal" visible={false}>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-    </Modal>
-  </div>
+import { FormComponent } from './FormComponent';
+
+export const ModalComponent = ({
+  visible,
+  toHide
+}: {
+  visible: boolean;
+  toHide: (() => void);
+}) => (
+  <Modal title="Basic Modal" visible={visible} onOk={toHide} onCancel={toHide}>
+    <FormComponent />
+  </Modal>
 );
