@@ -3,6 +3,8 @@ import { Layout, Icon } from 'antd';
 
 import './App.css';
 
+import { WrappedFormUtils } from 'antd/lib/form/Form';
+
 import { ListComponent } from './ListComponent';
 import { ModalComponent } from './ModalComponent';
 
@@ -12,12 +14,16 @@ class App extends React.Component {
     showModal: false
   };
 
+  private form: WrappedFormUtils;
+
   public render() {
     return (
       <Layout className="App">
         <ModalComponent
+          ref={form => Object.assign(this, { form })}
           visible={this.state.showModal}
-          toHide={this.hideModal}
+          onCancel={this.hideModal}
+          onAdd={this.handleAdd}
         />
         <Layout.Sider width={400} style={{ background: '#fff' }}>
           <div
@@ -33,9 +39,7 @@ class App extends React.Component {
           </div>
           <ListComponent />
         </Layout.Sider>
-        <Layout.Content>
-          NO DATA
-        </Layout.Content>
+        <Layout.Content>NO DATA</Layout.Content>
       </Layout>
     );
   }
@@ -50,6 +54,20 @@ class App extends React.Component {
 
   private hideModal = (): void => {
     this.setState({ showModal: false });
+  }
+
+  private handleAdd = (): void => {
+    const form = this.form;
+    form.validateFields((err: object, values: string[]) => {
+      if (err) {
+        return;
+      }
+
+      // tslint:disable-next-line
+      console.log('Received values of form: ', values);
+      form.resetFields();
+      this.setState({ showModal: false });
+    });
   }
 }
 
