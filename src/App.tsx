@@ -32,7 +32,7 @@ class App extends React.Component {
           <div
             className="add-contact"
             onClick={this.showModal}
-            onMouseOver={this.setAddIconColor('#07d')}
+            onMouseOver={this.setAddIconColor('#4bf')}
             onMouseOut={this.setAddIconColor('#333')}
           >
             <Icon
