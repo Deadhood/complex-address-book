@@ -6,20 +6,21 @@ const random = (): string =>
 const Contact = types
   .model('Contact', {
     name: types.optional(types.string, 'Unnamed Contact'),
-    telephones: types.optional(types.array(types.string), []),
+    telephone: types.optional(types.string, ''),
     address: types.optional(types.string, ''),
-    email: types.optional(types.string, '')
-  })
-  .actions(self => {
-    function setName(name: string) {
-      self.name = name;
+    email: types.optional(types.string, ''),
+    setName (name: string) {
+      this.name = name;
+    },
+    setPhone (phone: string) {
+      this.telephone = phone;
+    },
+    setAddress (addr: string) {
+      this.address = addr;
+    },
+    setEmail (email: string) {
+      this.email = email;
     }
-
-    function setPhones(phones: string[]) {
-      self.telephones.splice(0, self.telephones.length, ...phones);
-    }
-
-    return { setName, setPhones };
   });
 
 const AddressBook = types

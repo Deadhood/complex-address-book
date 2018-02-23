@@ -5,17 +5,24 @@ import Input from 'antd/lib/input';
 import Icon from 'antd/lib/icon';
 import Modal from 'antd/lib/modal';
 
+import { AvatarUpload } from './AvatarUploadComponent';
+
 export interface ModalProps extends FormComponentProps {
   visible: boolean;
   onAdd: () => void;
   onCancel: () => void;
+  imageUpload: (image: string) => void;
 }
 
+const iconCSS = {
+  color: '#ccc'
+};
+
 const ModalComponent = Form.create()((props: ModalProps) => {
-  const {form, visible, onAdd, onCancel} = props;
+  const { form, visible, onAdd, onCancel, imageUpload } = props;
   return (
     <Modal
-      title="Basic Modal"
+      title="Add contact"
       visible={visible}
       okText="Add"
       onOk={onAdd}
@@ -23,60 +30,50 @@ const ModalComponent = Form.create()((props: ModalProps) => {
     >
       <Form>
         <Form.Item>
-          {form.getFieldDecorator('userName', {
-            rules: [{ required: true, message: 'Please input your username!' }]
+          <AvatarUpload onUpload={imageUpload} />
+        </Form.Item>
+        <Form.Item>
+          {form.getFieldDecorator('name', {
+            rules: [{ required: true, message: 'Please input a name!' }]
           })(
             <Input
-              prefix={<Icon type="user" style={{ color: '#ccc' }} />}
-              placeholder="Username"
+              prefix={<Icon type="user" style={iconCSS} />}
+              placeholder="Full Name"
             />
           )}
         </Form.Item>
 
         <Form.Item>
-          {form.getFieldDecorator('Phone', {
-            rules: [{ required: true, message: 'Please input your username!' }]
+          {form.getFieldDecorator('phone', {
+            rules: [{ required: true, message: 'Please input a phone number!' }]
           })(
             <Input
-              prefix={<Icon type="phone" style={{ color: '#ccc' }} />}
+              prefix={<Icon type="phone" style={iconCSS} />}
               placeholder="Phone"
+              type="tel"
             />
           )}
         </Form.Item>
 
         <Form.Item>
-          {form.getFieldDecorator('Address', {
-            rules: [{ required: true, message: 'Please input your username!' }]
+          {form.getFieldDecorator('address', {
+            rules: [{ required: true, message: 'Please input an address!' }]
           })(
             <Input
-              prefix={
-                <Icon
-                  type="environment-o"
-                  style={{ color: '#ccc' }}
-                />
-              }
+              prefix={<Icon type="environment-o" style={iconCSS} />}
               placeholder="Address"
             />
           )}
         </Form.Item>
 
         <Form.Item>
-          {form.getFieldDecorator('Email', {
-            rules: [{ required: true, message: 'Please input your username!' }]
+          {form.getFieldDecorator('email', {
+            rules: [{ required: true, message: 'Please input an email!' }]
           })(
             <Input
-              prefix={<Icon type="mail" style={{ color: '#ccc' }} />}
+              prefix={<Icon type="mail" style={iconCSS} />}
               placeholder="Email"
-            />
-          )}
-        </Form.Item>
-        <Form.Item>
-          {form.getFieldDecorator('img', {
-            rules: [{ required: true, message: 'Please input your username!' }]
-          })(
-            <Input
-              prefix={<Icon type="" style={{ color: '#ccc' }} />}
-              placeholder="img"
+              type="email"
             />
           )}
         </Form.Item>

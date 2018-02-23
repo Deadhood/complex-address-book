@@ -24,17 +24,20 @@ class App extends React.Component {
           visible={this.state.showModal}
           onCancel={this.hideModal}
           onAdd={this.handleAdd}
+          imageUpload={(image: string) => {
+            // TODO: implement image handling
+          }}
         />
         <Layout.Sider width={400} style={{ background: '#fff' }}>
           <div
             className="add-contact"
+            onClick={this.showModal}
             onMouseOver={this.setAddIconColor('#07d')}
             onMouseOut={this.setAddIconColor('#333')}
           >
             <Icon
               type="plus"
               style={{ color: this.state.addColor }}
-              onClick={this.showModal}
             />
           </div>
           <ListComponent />
