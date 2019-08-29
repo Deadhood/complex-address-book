@@ -22,7 +22,7 @@
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.8.5",
-    "typescript": "~3.5.3"
+    "typescript": "~3.6.2"
   },
   "description": "Over-complicated address book web app",
   "main": "index.js",
