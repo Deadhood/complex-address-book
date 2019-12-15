@@ -9,7 +9,7 @@
     "mobx-state-tree": "^1.4.0",
     "pouchdb": "^7.1.1",
     "react": "^16.12.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.12.0",
     "react-scripts-ts": "4.0.8"
   },
   "scripts": {
