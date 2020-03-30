@@ -853,9 +853,9 @@
     "@svgr/core" "^2.4.1"
     loader-utils "^1.1.0"
 
-"@types/node@^13.9.4":
-  version "13.9.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.4.tgz#63c58e67999bfbfa688dd49ed84639b01b543606"
+"@types/node@^13.9.5":
+  version "13.9.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.5.tgz#59738bf30b31aea1faa2df7f4a5f55613750cf00"
 
 "@types/prop-types@*":
   version "15.7.1"
